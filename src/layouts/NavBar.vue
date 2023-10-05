@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import {  RouterLink } from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 const menus = ref<{ to?: string; label: string; children?: { to: string; label: string }[] }[]>([
   {
@@ -37,36 +37,65 @@ const menus = ref<{ to?: string; label: string; children?: { to: string; label: 
     label: 'Contact Us'
   }
 ])
-
 </script>
 
 <template>
   <div class="navbar bg-base-100 shadow-lg h-20">
     <div class="navbar-start">
-      <ul class="menu menu-horizontal px-3">
-        <li v-for="(menu, index) in menus" :key="index" tabindex="0" class="dropdown">
-          <details v-if="menu.children && menu.children?.length > 0">
-            <summary>{{ menu.label }}</summary>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li v-for="(item, idx) in menu.children" :key="idx">
-                <RouterLink :to="{ name: item.to }">{{ item.label }}</RouterLink>
-              </li>
-            </ul>
-          </details>
-          <summary v-else>
-            <RouterLink :to="{ name: menu.to }">{{ menu.label }}</RouterLink>
-          </summary>
-        </li>
-      </ul>
+      <div class="hidden lg:flex">
+        <ul class="menu menu-horizontal px-3">
+          <li v-for="(menu, index) in menus" :key="index" tabindex="0" class="dropdown">
+            <details v-if="menu.children && menu.children?.length > 0">
+              <summary>{{ menu.label }}</summary>
+              <ul
+                tabindex="0"
+                class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li v-for="(item, idx) in menu.children" :key="idx">
+                  <RouterLink :to="{ name: item.to }">{{ item.label }}</RouterLink>
+                </li>
+              </ul>
+            </details>
+            <summary v-else>
+              <RouterLink :to="{ name: menu.to }">{{ menu.label }}</RouterLink>
+            </summary>
+          </li>
+        </ul>
+      </div>
+
+      <div class="dropdown dropdown-start lg:hidden">
+        <label tabindex="0" class="btn btn-ghost">
+          <img
+            src="https://img.icons8.com/000000/m_rounded/2x/menu.png"
+            alt="menu"
+            class="w-5 h-5"
+          />
+        </label>
+        <div class="dropdown-content menu rounded-box shadow bg-white w-32 z-[1] p-2">
+          <ul>
+            <li v-for="(menu, idx) in menus" :key="idx" tabindex="0">
+              <details v-if="menu.children && menu.children?.length > 0">
+                <summary>{{ menu.label }}</summary>
+                <ul>
+                  <li v-for="(item, idx) in menu.children" :key="idx">
+                    <RouterLink :to="{ name: item.to }">{{ item.label }}</RouterLink>
+                  </li>
+                </ul>
+              </details>
+              <summary v-else>
+                <RouterLink :to="{ name: menu.to }">{{ menu.label }}</RouterLink>
+              </summary>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div class="navbar-center hidden lg:flex">
-      <a class="btn btn-ghost normal-case text-4xl font-serif text-black">Pisces</a>
+    <div class="navbar-center hidden min-[390px]:flex">
+      <a class="btn btn-ghost normal-case text-3xl min-[840px]:text-4xl font-serif text-black">Pisces</a>
     </div>
 
     <div class="navbar-end">
-      <ul class="menu menu-horizontal px-3">
-        <li><a>My Account</a></li>
-      </ul>
+      <img src="/src/assets/images/cinnamon.jpg" alt="" class="rounded-full w-10 h-10">
 
       <div class="flex-none">
         <div class="dropdown dropdown-end">

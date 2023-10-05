@@ -6,7 +6,7 @@ import FooterLayout from './FooterLayout.vue';
 </script>
 
 <template>
-  <div>
+  <div class="">
     <NavBar class="sticky top-0" />
     <div>
       <RouterView />

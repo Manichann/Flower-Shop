@@ -32,20 +32,34 @@ const shops = ref<ShopList[]>([
 </script>
 
 <template>
-  <div class="w-full py-28">
-    <p class="font-serif text-5xl text-black text-center px-28">
+  <div class="w-full py-10 sm:py-16 md:py-28">
+    <p
+      class="font-serif text-xl md:text-3xl lg:text-4xl text-black text-center px-10 min-[390px]:px-16 sm:px-24 md:px-28 lg:px-36"
+    >
       There’s something in the simple act of being around, and caring for, plants that boost our
       spirits and enhance our environments.
     </p>
     <div>
-      <ul class="grid grid-cols-3 my-20">
-        <li class="flex flex-col items-center px-16" v-for="(shop, index) of shops" :key="index">
-          <img :src="shop.img" :alt="shop.alt" class="rounded-t-full object-fill h-96 w-96" />
-          <RouterLink :to="{ name: shop.button }" class="text-2xl hover:text-yellow-500 py-5">
-            {{ shop.shop }}
-          </RouterLink>
-        </li>
-      </ul>
+      <div class="flex flex-col items-center py-10 lg:py-20">
+        <ul class="grid lg:grid-cols-3 gap-x-20 text-center">
+          <li v-for="(shop, index) of shops" :key="index" class="py-10 lg:py-0">
+            <img
+              :src="shop.img"
+              :alt="shop.alt"
+              class="rounded-t-full object-fill w-[16rem] h-[18rem] lg:w-[18rem] lg:h-[20rem]"
+            />
+
+            <div class="py-5">
+              <RouterLink
+                :to="{ name: shop.button }"
+                class="text-md md:text-xl uppercase hover:text-yellow-500"
+              >
+                {{ shop.shop }}
+              </RouterLink>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

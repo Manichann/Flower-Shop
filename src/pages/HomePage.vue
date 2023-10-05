@@ -5,8 +5,8 @@ import ShopComponent from '@/components/ShopComponent.vue';
 </script>
 
 <template>
-  <div>
-    <IntroPisces class="w-full"/>
+  <div class="w-full">
+    <IntroPisces/>
     <ShopComponent/>
     <BestSeller />
   </div>
