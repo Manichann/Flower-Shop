@@ -27,8 +27,6 @@ onMounted(() => {
             <img :src="daily.image" :alt="daily.name" class="h-[18rem] sm:h-[22rem] min-[840px]:h-[28rem] lg:h-[26rem] lg:w-[18rem] xl:h-[30rem] xl:w-[22rem] cursor-pointer" />
             <div class="pt-4 text-red-700 font-semibold text-lg">{{ daily.name }}</div>
             <span>{{ daily.price.toLocaleString() }} kip</span>
-            <div><button class="btn btn-md btn-primary">Add to Cart</button></div>
-            
           </li>
         </ul>
       </div>

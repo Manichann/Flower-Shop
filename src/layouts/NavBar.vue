@@ -90,7 +90,7 @@ const menus = ref<{ to?: string; label: string; children?: { to: string; label: 
         </div>
       </div>
     </div>
-    <div class="navbar-center hidden min-[390px]:flex">
+    <div class="navbar-center hidden sm:flex">
       <a class="btn btn-ghost normal-case text-3xl min-[840px]:text-4xl font-serif text-black">Pisces</a>
     </div>
 

@@ -19,6 +19,11 @@ export interface Inventory {
     qty: number
 }
 
+interface ProductState {
+    items: Record<string, Product>
+    ids: number[]
+  }
+
 export const categories: Category[] = [
     { id: "C01", name: "Daily", product: [{id: 'P001'},{id: 'P005'},{id: 'P008'}, {id: 'P010'}] },
     { id: "C02", name: "Events", product: [{id: 'P003'}, {id: 'P004'}, {id: 'P009'},{id: 'P011'}] },
