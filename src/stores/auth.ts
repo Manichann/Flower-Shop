@@ -34,6 +34,14 @@ export const authStore = defineStore('auth-store', () => {
       return
     }
 
+    localStorage.setItem(
+      'user',
+      JSON.stringify({
+        sub: user.id,
+        username: user.username
+      })
+    )
+
     authState.data = user
     authState.isLoading = false
 

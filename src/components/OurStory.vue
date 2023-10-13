@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 py-16 px-16 lg:px-20 gap-x-20">
     <div>

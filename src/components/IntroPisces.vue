@@ -1,5 +1,3 @@
-<script setup lang="ts"></script>
-
 <template>
   <div class="grid lg:grid-cols-2">
     <figure class="-order-1 lg:order-1">

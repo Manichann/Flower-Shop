@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
     <div class="grid grid-cols-1 lg:grid-cols-2 mt-14 lg:mt-24">
     <img src="https://aspicio.themeskingdom.com/wp-content/uploads/2022/03/image-48-1.png" class="h-20 sm:h-40 lg:h-full w-full object-cover"/>
